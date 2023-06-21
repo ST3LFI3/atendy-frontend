@@ -44,8 +44,8 @@ export const ListPlaces = () => {
 
     const handleLocates = () => {
         return  places.map((place,index) => { 
-            return <div className="snap-start">
-                <CardLocale key={place?.id} {...place}/>
+            return <div className="snap-start" key={place?.id} >
+                <CardLocale {...place}/>
             </div>
         })
     }
