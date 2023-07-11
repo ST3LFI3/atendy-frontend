@@ -1,5 +1,5 @@
 import Balancer from "react-wrap-balancer"
-import { Button } from "../Button/Button"
+import { Button } from "../System/Button"
 import { AiOutlineSearch } from 'react-icons/ai'
 import { RiScissors2Line } from 'react-icons/ri'
 import { useState,useEffect } from "react";
@@ -26,6 +26,8 @@ export const BoxSearch = () => {
                     font-semibold 
                     md:text-sm
                     text-xs
+                    mt-40
+                    md:mt-10
                 "
             >
                 Praticidade e velocidade

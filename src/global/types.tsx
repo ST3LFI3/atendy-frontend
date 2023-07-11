@@ -5,6 +5,7 @@ interface PlaceProps{
     state:string,
     city:string,
     address:string,
+    slug?:string,
     image?:string
 }
 

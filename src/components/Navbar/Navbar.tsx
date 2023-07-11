@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "../Button/Button"
+import { Button } from "../System/Button"
+import { Linking } from "../System/Link"
 
 export const Navbar = () => {
     return <div className="w-full flex items-center justify-center py-3 on md:sticky top-0 z-50 ">
@@ -36,9 +37,19 @@ export const Navbar = () => {
                 </Link>                
             </div>
             <div className="flex items-center">
-                <button className="text-primary mx-3 text-sm">Login</button>
-                <Button
+                <a 
+                    className="
+                        text-primary 
+                        mx-3 
+                        text-sm
+                    "
+                    href="/login"
+                >
+                    Login
+                </a>
+                <Linking
                     text="Começe já"
+                    href="/signin"
                 />
             </div>
         </div>

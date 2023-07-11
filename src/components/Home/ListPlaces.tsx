@@ -11,6 +11,7 @@ export const ListPlaces = () => {
             address:'Rua Dr. Wanilton Finamore - 1075',
             name:'O lenhador',
             description:'Promoção somente essa semana',
+            slug:'olenhador-1',
             image:'https://lh5.googleusercontent.com/p/AF1QipPIWU000yCzb3KV4HbuldX9B2aCqtegGOST4z0J=w408-h306-k-no'
         },
         {
@@ -20,6 +21,7 @@ export const ListPlaces = () => {
             address:'Rua Dr. Wanilton Finamore - 1075',
             name:'O lenhador',
             description:'Promoção somente essa semana',
+            slug:'olenhador-2',
             image:'https://lh5.googleusercontent.com/p/AF1QipPIWU000yCzb3KV4HbuldX9B2aCqtegGOST4z0J=w408-h306-k-no'
         },
         {
@@ -29,6 +31,7 @@ export const ListPlaces = () => {
             address:'Rua Dr. Wanilton Finamore - 1075',
             name:'O lenhador',
             description:'Promoção somente essa semana',
+            slug:'olenhador-3',
             image:'https://lh5.googleusercontent.com/p/AF1QipPIWU000yCzb3KV4HbuldX9B2aCqtegGOST4z0J=w408-h306-k-no'
         },
         {
@@ -38,15 +41,16 @@ export const ListPlaces = () => {
             address:'Rua Dr. Wanilton Finamore - 1075',
             name:'O lenhador',
             description:'Promoção somente essa semana',
+            slug:'olenhador-4',
             image:'https://lh5.googleusercontent.com/p/AF1QipPIWU000yCzb3KV4HbuldX9B2aCqtegGOST4z0J=w408-h306-k-no'
         }
     ]
 
     const handleLocates = () => {
         return  places.map((place,index) => { 
-            return <div className="snap-start" key={place?.id} >
+            return <a href={`/places/${place?.slug}`} className="snap-start" key={place?.id} >
                 <CardLocale {...place}/>
-            </div>
+            </a>
         })
     }
 
