@@ -1,5 +1,6 @@
 import { PlaceProps } from "@/global/types"
 import CardLocale from "./CardLocale"
+import Link from "next/link"
 
 
 export const ListPlaces = () => {
@@ -43,14 +44,24 @@ export const ListPlaces = () => {
             description:'Promoção somente essa semana',
             slug:'olenhador-4',
             image:'https://lh5.googleusercontent.com/p/AF1QipPIWU000yCzb3KV4HbuldX9B2aCqtegGOST4z0J=w408-h306-k-no'
+        },
+        {
+            id:'5',
+            state:'MS',
+            city:'Dourados',
+            address:'Rua Dr. Wanilton Finamore - 1075',
+            name:'O lenhador',
+            description:'Promoção somente essa semana',
+            slug:'olenhador-4',
+            image:'https://lh5.googleusercontent.com/p/AF1QipPIWU000yCzb3KV4HbuldX9B2aCqtegGOST4z0J=w408-h306-k-no'
         }
     ]
 
     const handleLocates = () => {
         return  places.map((place,index) => { 
-            return <a href={`/places/${place?.slug}`} className="snap-start" key={place?.id} >
+            return <Link href={`/places/${place?.slug}`} className="snap-start" key={place?.id} >
                 <CardLocale {...place}/>
-            </a>
+            </Link>
         })
     }
 
