@@ -31,6 +31,7 @@ module.exports = {
       'dark':'#333333',
       'text-dark':'#121214',
       'white':'#fff',
+      'white-ligth':'#F8F8FF',
       'neutral-50':'#fafafa',
       'input':'#F4F4FF'
     },
