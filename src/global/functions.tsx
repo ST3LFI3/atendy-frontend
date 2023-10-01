@@ -1,6 +1,6 @@
 function formatName(name:string) {
     if(!name)return ''
-    // Dividir o nome em palavras separadas
+    
     const nameParts = name.split(' ');
   
     if (nameParts.length >= 2) {

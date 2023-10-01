@@ -15,14 +15,14 @@ export const Input = ({...rest }:props) => {
                 bg-gray-100
                 h-${rest.size?rest.size:'12'}
                 rounded-[4px] 
-                p-2 
+                py-3 px-2
                 mt-4
-                gap-1    
+                gap-2 
             `}
         >
-            {rest.left&&rest.left}
-            <input className="w-full h-full bg-gray-100 outline-none" {...rest}/>
-            {rest.right&&rest.right}
+            { rest.left && rest.left }
+            <input className="w-full h-full bg-gray-100 outline-none text-gray-700" {...rest}/>
+            { rest.right && rest.right }
         </div>
     )
 }

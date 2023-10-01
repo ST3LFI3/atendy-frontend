@@ -9,6 +9,7 @@ import { Input } from '../Input/Input'
 import { AiOutlineUser} from 'react-icons/ai'
 import { BsPhone,BsCheck2Circle} from 'react-icons/bs'
 import { ButtonDefault } from '../ButtonDefult/Button'
+import { Balancer } from 'react-wrap-balancer'
 interface props{
     isVisible:boolean
     close:Function
@@ -37,20 +38,29 @@ export const ModalCreatePassword = ({ isVisible,close}:props) => {
                 nome:'Caio vinicius ',
             },
         ]
+
         let vet:any = []
         barber.map((item,index)=>{
             vet.push(
                 <button 
-                    className='flex flex-col justify-center items-center'
+                    className="
+                        flex 
+                        flex-col 
+                        justify-between 
+                        w-full 
+                        items-center 
+                        py-4                        
+                    "
                     onClick={()=>setBarberSelected(index)}
                 >
                     <OvalCard 
                         key={index}
-                        selected={index==barberSelected}
+                        selected={index == barberSelected}
                         size='12' 
+                        className="py-4 px-4"
                         icone={item.icone} 
                     />
-                    <label className='text-sm mt-2'>{formatName(item.nome)}</label>
+                    <label className='text-sm mt-2'>{ formatName(item.nome) }</label>
                 </button>
             )
         })
@@ -58,11 +68,18 @@ export const ModalCreatePassword = ({ isVisible,close}:props) => {
     }
 
     return (
-       <div className="fixed inset-0 bg-gray-900 bg-opacity-25 
-            backdrop-blur-sm flex justify-center items-center "
-            
-        >
-            <div className="w-[600px]">
+       <div className="
+            fixed 
+            inset-0 
+            bg-gray-900 
+            bg-opacity-25 
+            backdrop-blur-sm 
+            flex 
+            justify-center 
+            items-center
+            transition-transform
+        ">
+            <div className="w-[95%] md:w-[600px]">
                 <div className="bg-white rounded p-2">
                     <div className='w-full flex items-center justify-between '>
                         <div className='w-[100%] flex justify-center'>
@@ -77,7 +94,7 @@ export const ModalCreatePassword = ({ isVisible,close}:props) => {
                     <div className='w-full p-6'>
                         <span className='font-medium '>Selecione o profissional</span>
                         <div className='flex gap-4 mt-2'>
-                            {renderBarber()}
+                            { renderBarber() }
                         </div>
                         <Input 
                             left={<AiOutlineUser className="text-secondary text-xl"/>}
@@ -87,10 +104,10 @@ export const ModalCreatePassword = ({ isVisible,close}:props) => {
                             left={<BsPhone className="text-secondary text-xl"/>}
                             placeholder='Informe seu celular'
                         />
-                        <span className='text-justify text-gray-700 text-xs mt-2'>
-                            Ao continuar navegando neste site, 
-                            você concorda com nossa 
-                            <span className='text-primary font-bold'> Politicas de Privacidades</span> 
+                        
+                        <span className='text-justify text-gray-700 text-xs my-2'>
+                            Ao continuar navegando neste site, você concorda com nossa 
+                            <span className='text-primary font-bold'> Politica de Privacidade</span>{' '} 
                             e nossos <span className='text-primary font-bold'>Termos de Uso</span>  
                         </span>
                     </div>

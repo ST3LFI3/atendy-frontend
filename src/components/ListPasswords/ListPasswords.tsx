@@ -32,52 +32,58 @@ export default function ListPasswords(){
                 senhas:'4 senhas'
             },
         ]
+        
         let vet:any = []
         barber.map((item,index)=>{
             vet.push(
                 <LineOvalCard 
                     icone={item.icone}
                     label={item.nome}
-                    labelLeft={item.senhas}
+                    labelLeft={item.senhas}                    
                 />
             )
-        })
+        });
+
         return vet
     }
 
     return (
-        <div className="w-full block md:flex bg-white-ligth ">
-            <ModalCreatePassword isVisible={modalPassword} close={()=>setModalPassword(false)}/>
-            <div className="w-full md:w-[50%]">
+        <div className="w-full min-h-screen block md:flex bg-white-ligth pb-16 md:pb-0">
+            <ModalCreatePassword 
+                isVisible={modalPassword} 
+                close={()=>setModalPassword(false)}
+            />
+             
+            <div className="w-full md:w-[50%] bg-white pb-4 md:pb-0">
                 <div>
                     <Image 
                         src={ImgBanner}
                         alt="Banner"
-                        className="object-cover w-full max-h-[350px] transition rounded-t"
+                        className="object-cover w-full max-h-[350px] transition "
                     />
                 </div>
-                <div>
-                    <div className="w-full p-2 pr-4 flex justify-between mt-4">
-                        <span className="font-semibold text-lg">O lenhador MS</span>
+                <div className="px-4 py-2">
+                    <div className="w-full flex justify-between mt-4">
+                        <span className="font-semibold text-lg capitalize">O lenhador MS</span>
                         <ButtonDefault  
                            icon={<IoLocationOutline className="text-lg"/>}
                            label="ABRIR NO MAPA" 
                            theme="primary"
                         />
                     </div>
-                    <div className="w-full p-2 pl-4 gap-2 flex items-center">
+                    <div className="w-full gap-4 flex items-center pt-4 md:pt-0">
                         <IoLocationOutline className="text-primary text-lg"/>
-                        <span className="w-full font-medium sm:text-xs">Rua doutor wanilton finamore, 1075 - dourados, ms</span>
+                        <span className="w-full font-medium text-xs md:text-md">Rua doutor wanilton finamore, 1075 - dourados, ms</span>
                     </div>
                 </div>
-                <div className="w-full pl-4 pr-4 mt-5 mb-10">
+                <div className="w-full px-4 mt-5 mb-10">
                     <span className="font-bold">EQUIPE</span>
                     {renderBarber()}
                 </div>
             </div>
             <div className="w-full md:w-[50%] flex items-start justify-center mt-20 mb-20">
                 <div className="flex flex-col gap-5 justify-center items-center">
-                    <span className="text-4xl font-semibold">Úlima Senha</span>
+                    <span className="text-4xl font-semibold">Última Senha</span>
                     <div className="border-8 border-primary w-60 h-60 rounded-full flex items-center justify-center">
                         <label className="text-6xl text-primary">
                             68
