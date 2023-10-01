@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useSession, signIn, signOut } from 'next-auth/react';
 
 export default function Login(){
-    const {data:session} = useSession();
+    const { data:session } = useSession();
 
     if(session){
         return(<>
@@ -92,7 +92,7 @@ export default function Login(){
                 <div className='mt-3'>
                     <span className='text-sm font-medium gap-1 flex'>
                         Ainda não tem uma conta? 
-                        <Link className='text-primary' href={'/sigin'}><u>Faça seu cadastro</u></Link>    
+                        <Link className='text-primary' href={'/signin'}><u>Faça seu cadastro</u></Link>    
                     </span>
                 </div>
             </div>
